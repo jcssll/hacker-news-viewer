@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { HackerNewsService } from '../../services/hacker-news.service';
+import { Component, OnInit } from '@angular/core'; //structure for a component and On Init functionality
+import { CommonModule } from '@angular/common'; // needed for the NgFor directive
+import { HackerNewsService } from '../../services/hacker-news.service'; //Also importing Hacker News Service
 @Component({
+  standalone: true,
   selector: 'app-top-stories',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './top-stories.component.html',
   styleUrl: './top-stories.component.css'
 })
