@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class HackerNewsService {
 
-  private apiUrl = 'http://localhost:5000/api/stories/top';
+  private apiUrl = 'https://localhost:5001/api/stories/top';
 
   constructor(private http: HttpClient) { }
 
