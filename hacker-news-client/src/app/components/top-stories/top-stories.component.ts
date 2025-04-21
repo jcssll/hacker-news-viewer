@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'; //structure for a component and On Init functionality
 import { CommonModule } from '@angular/common'; // needed for the NgFor directive
-//import { HttpClientModule } from '@angular/common/http'; //has been deprecated
+import { provideHttpClient, HttpClientModule } from '@angular/common/http'; //HttpClientModule has been deprecated
 import { HackerNewsService } from '../../services/hacker-news.service'; //Also importing Hacker News Service
 
 @Component({
@@ -8,7 +8,8 @@ import { HackerNewsService } from '../../services/hacker-news.service'; //Also i
   selector: 'app-top-stories',
   imports: [CommonModule],
   templateUrl: './top-stories.component.html',
-  styleUrl: './top-stories.component.css'
+  styleUrl: './top-stories.component.css', 
+  providers: [HackerNewsService]// Custom HN Service
 })
 export class TopStoriesComponent implements OnInit {
 
