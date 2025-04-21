@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'; //structure for a component and On Init functionality
 import { CommonModule } from '@angular/common'; // needed for the NgFor directive
+//import { HttpClientModule } from '@angular/common/http'; //has been deprecated
 import { HackerNewsService } from '../../services/hacker-news.service'; //Also importing Hacker News Service
+
 @Component({
   standalone: true,
   selector: 'app-top-stories',
