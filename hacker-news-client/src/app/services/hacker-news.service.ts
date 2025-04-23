@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,11 +7,29 @@ import { Observable } from 'rxjs';
 })
 export class HackerNewsService {
 
-  private apiUrl = 'https://localhost:5001/api/stories/top';
+  //private apiUrl = 'https://localhost:5001/api/stories/top';
+  private baseUrl = 'https://localhost:5001/api/stories';
 
   constructor(private http: HttpClient) { }
 
-  getTopStories(): Observable<any>{
-    return this.http.get(this.apiUrl)
+  getStories(type: 'top' | 'new' | 'best', page: number = 1, pageSize: number = 10, searchTerm: string=''): Observable<any>{
+    let params = new HttpParams()
+    .set('page', page.toString())
+    .set('pageSize', pageSize.toString());
+
+    if(searchTerm){
+      params = params.set('searchTerm', searchTerm);
+    }
+    return this.http.get(`${this.baseUrl}/${type}`, {params});
   }
+
+  // getTopStories(): Observable<any>{
+  //   return this.http.get(this.apiUrl)
+  // }
+
+  //optional: Get individual story by ID 
+  getStoryById(id: number): Observable<any>{
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
 }
