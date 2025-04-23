@@ -1,0 +1,18 @@
+.card {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: white;
+  
+    &.style1 {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+    }
+  
+    &.style2 {
+      background: linear-gradient(to right, #f12711, #f5af19);
+    }
+  
+    &.style3 {
+      background: linear-gradient(to right, #4b6cb7, #182848);
+    }
+  }
