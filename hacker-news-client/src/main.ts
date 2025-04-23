@@ -5,12 +5,10 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
 
-bootstrapApplication(AppComponent,{
-  ... appConfig, //existing config
-  providers:[
-    ...(appConfig.providers || [] ), // preserving the existing providers
-    provideHttpClient(),// the new provider
+bootstrapApplication(AppComponent, {
+  providers: [
+    ...(appConfig.providers || [] ),
+    provideHttpClient(),
     provideRouter(routes)
   ]
-})
-  .catch((err) => console.error(err));
+}).catch((err) => console.error(err));
