@@ -18,8 +18,8 @@ export class TopStoriesComponent implements OnInit {
   constructor(private hnService: HackerNewsService){}
 
   ngOnInit(): void {
-    this.hnService.getTopStories().subscribe((data) => {
-      this.stories = data
+    this.hnService.getStories('new', 1, 10, 'Angular').subscribe(stories => {
+      this.stories = stories;
     });
   }
 }
