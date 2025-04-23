@@ -1,1 +1,19 @@
-<p>story-list works!</p>
+<div>
+    <label>Story Type:</label>
+    <select [(ngModel)]="storyType" (change)="loadStories()">
+      <option value="top">Top</option>
+      <option value="new">New</option>
+      <option value="best">Best</option>
+    </select>
+  
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search title..." (keyup.enter)="loadStories()" />
+  
+    <button (click)="page > 1 && (page = page - 1); loadStories()">Prev</button>
+    <button (click)="page = page + 1; loadStories()">Next</button>
+  
+    <ul>
+      <li *ngFor="let story of stories">
+        <a [href]="story.url" target="_blank">{{ story.title }}</a>
+      </li>
+    </ul>
+  </div>
