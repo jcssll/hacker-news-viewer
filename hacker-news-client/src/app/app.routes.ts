@@ -3,6 +3,6 @@ import { TopStoriesComponent } from './components/top-stories/top-stories.compon
 
 export const routes: Routes = [
 
-    {path: 'top-stories', component: TopStoriesComponent}
+    {path: '', component: TopStoriesComponent}
 
 ];
