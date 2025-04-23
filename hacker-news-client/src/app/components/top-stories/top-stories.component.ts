@@ -8,7 +8,7 @@ import { HackerNewsService } from '../../services/hacker-news.service'; //Also i
   selector: 'app-top-stories',
   imports: [CommonModule],
   templateUrl: './top-stories.component.html',
-  styleUrl: './top-stories.component.css', 
+  styleUrls: ['./top-stories.component.css'],
   providers: [HackerNewsService]// Custom HN Service
 })
 export class TopStoriesComponent implements OnInit {
