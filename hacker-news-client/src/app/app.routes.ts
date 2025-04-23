@@ -1,8 +1,12 @@
 import { Routes } from '@angular/router';
 import { TopStoriesComponent } from './components/top-stories/top-stories.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
 
-    {path: '', component: TopStoriesComponent}
+    {path: '', component: TopStoriesComponent}, 
+    {path: 'Home', component: AppComponent}
+    
+
 
 ];

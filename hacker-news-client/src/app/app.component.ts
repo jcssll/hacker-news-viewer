@@ -19,5 +19,5 @@ import { RouterOutlet } from '@angular/router';
    //imports: [HeaderComponent, FooterComponent, TopStoriesComponent],
 })
 export class AppComponent {
-  //title = 'hacker-news-client';
+  title = 'hacker-news-client';
 }
