@@ -21,14 +21,16 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: hacker-news-client
 
       - name: Build Angular app
         run: npm run build -- --configuration production
+        working-directory: hacker-news-client
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'hackernews' # Replace with your frontend's Azure App name
+          app-name: 'hackernews'  # Replace with your actual frontend Azure App name
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: dist/hacker-news-client
+          package: hacker-news-client/dist/hacker-news-client
