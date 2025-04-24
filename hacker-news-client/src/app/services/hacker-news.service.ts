@@ -8,8 +8,6 @@ import { environment } from '../../environments/environment';
 })
 export class HackerNewsService {
 
-  //private apiUrl = 'https://localhost:5001/api/stories/top';
- // private baseUrl = 'https://localhost:5001/api/stories';
  private baseUrl = environment.apiUrl; 
 
   constructor(private http: HttpClient) { }
@@ -25,11 +23,6 @@ export class HackerNewsService {
     return this.http.get(`${this.baseUrl}/${type}`, {params});
   }
 
-  // getTopStories(): Observable<any>{
-  //   return this.http.get(this.apiUrl)
-  // }
-
-  //optional: Get individual story by ID 
   getStoryById(id: number): Observable<any>{
     return this.http.get(`${this.baseUrl}/${id}`);
   }
