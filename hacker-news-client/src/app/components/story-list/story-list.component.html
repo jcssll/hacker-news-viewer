@@ -1,19 +1,21 @@
-<div>
-    <label>Story Type:</label>
-    <select [(ngModel)]="storyType" (change)="loadStories()">
-      <option value="top">Top</option>
-      <option value="new">New</option>
-      <option value="best">Best</option>
-    </select>
-  
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Search title..." (keyup.enter)="loadStories()" />
-  
-    <button (click)="page > 1 && (page = page - 1); loadStories()">Prev</button>
-    <button (click)="page = page + 1; loadStories()">Next</button>
-  
-    <ul>
-      <li *ngFor="let story of stories">
-        <a [href]="story.url" target="_blank">{{ story.title }}</a>
-      </li>
-    </ul>
+<div class="story-controls">
+  <label>Story Type:</label>
+  <select [(ngModel)]="storyType" (change)="loadStories()">
+    <option value="top">Top</option>
+    <option value="new">New</option>
+    <option value="best">Best</option>
+  </select>
+
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search title..." (keyup.enter)="loadStories()" />
+
+  <button (click)="page > 1 && (page = page - 1); loadStories()">Prev</button>
+  <button (click)="page = page + 1; loadStories()">Next</button>
+</div>
+
+<div class="card-grid">
+  <div class="card" *ngFor="let story of stories">
+    <h2 class="card-title">{{ story.title }}</h2>
+    <p class="card-meta">by {{ story.by }}</p>
+    <a [href]="story.url" target="_blank" class="card-link">Read Story</a>
   </div>
+</div>

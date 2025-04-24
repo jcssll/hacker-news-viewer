@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
+.story-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+
+
+.story-controls select,
+.story-controls input,
+.story-controls button {
+  font-family: 'Press Start 2P', cursive;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  background-color: black;
+  color: #f80;
+  border: 2px solid #f80;
+  border-radius: 5px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #1a1a1a;
+  color: white;
+  border: 2px solid #f80;
+  padding: 1rem;
+  border-radius: 8px;
+  /* font-family: 'Press Start 2P', cursive; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  background-color: #292929;
+}
+
+.card-title {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #f80;
+}
+
+.card-meta {
+  font-size: 0.6rem;
+  color: #bbb;
+  margin-bottom: auto;
+}
+
+.card-link {
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #f80;
+  font-size: 0.75rem;
+}
