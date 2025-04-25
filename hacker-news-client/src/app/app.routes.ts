@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-// import { TopStoriesComponent } from './components/top-stories/top-stories.component';
 import { StoryListComponent } from './components/story-list/story-list.component';
 import { AppComponent } from './app.component';
 
