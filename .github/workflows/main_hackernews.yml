@@ -32,6 +32,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'hackernews'  # Your Azure Web App name
+          app-name: 'hackernews-hfavfhdqd8f9byge'  # Your Azure Web App name
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: hacker-news-client/dist/hacker-news-client
