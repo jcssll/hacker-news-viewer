@@ -28,7 +28,7 @@ jobs:
         with:
           app-name: 'hackernews'  # Your Azure Web App name
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: 'hacker-news-client/dist/hacker-news-client/browser'
+          package: 'hacker-news-client/dist/hacker-news-client'
 
       - name: Debug - List Dist Files
         run: ls -R hacker-news-client/dist/hacker-news-client
