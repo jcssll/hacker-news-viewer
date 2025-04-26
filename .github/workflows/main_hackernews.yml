@@ -23,7 +23,7 @@ jobs:
         run: npm install --prefix hacker-news-client
 
       - name: Build Angular App
-        run: npm run build --prefix hacker-news-client -- --prod
+        run: npm run build --prefix hacker-news-client -- --configuration production
 
       - name: Debug - Show Dist Folder Content
         run: ls -R hacker-news-client/dist/hacker-news-client
