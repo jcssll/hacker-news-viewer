@@ -28,6 +28,9 @@ jobs:
       - name: Debug - Show Dist Folder Content
         run: ls -R hacker-news-client/dist/hacker-news-client
 
+      - name: Install zip tool
+        run: sudo apt-get install zip
+
       - name: Create deployment ZIP
         run: |
           cd hacker-news-client/dist/hacker-news-client
