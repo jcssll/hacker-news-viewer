@@ -28,9 +28,14 @@ jobs:
       - name: Debug - Show Dist Folder Content
         run: ls -R hacker-news-client/dist/hacker-news-client
 
+      - name: Create deployment ZIP
+        run: |
+          cd hacker-news-client/dist/hacker-news-client
+          zip -r ../../deploy.zip .
+
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'hackernews'  # Your Azure Web App name
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: 'hacker-news-client/dist/hacker-news-client'
+          package: 'hacker-news-client/dist/deploy.zip'
